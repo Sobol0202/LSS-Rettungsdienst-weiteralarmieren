@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name           LSS Rettungsdienst weiteralarmieren
 // @namespace      https://www.leitstellenspiel.de/
-// @version        1.0
+// @version        1.1
 // @description    Zusätzlicher Button um allen Rettungsdienst direkt als Folgeeinsatz zu alarmieren
 // @author         MissSobol
 // @match          https://www.leitstellenspiel.de/missions/*
@@ -22,7 +22,7 @@
                 simulateChangeEvent(checkboxes[i]);
             }
         }
-        console.log('Checkboxen wurden aktiviert.');
+//        console.log('Checkboxen wurden aktiviert.');
     }
 
     // Funktion zum Simulieren des Änderungsereignisses
@@ -48,17 +48,17 @@
                         tabLink.classList.add('active');
                         setTimeout(activateCheckboxes, 500); // Wartezeit vor dem Aktivieren der Checkboxen
                     } else {
-                        console.log('Tab mit der ID "occupied" wurde nicht gefunden.');
+//                        console.log('Tab mit der ID "occupied" wurde nicht gefunden.');
                     }
                 } else {
-                    console.log('Tab-Inhaltsdiv wurde nicht gefunden.');
+//                    console.log('Tab-Inhaltsdiv wurde nicht gefunden.');
                 }
             });
 
             backButton.parentNode.insertBefore(newButton, backButton);
-            console.log('Neuer Button wurde hinzugefügt.');
+//            console.log('Neuer Button wurde hinzugefügt.');
         } else {
-            console.log('Back-Button wurde nicht gefunden.');
+//            console.log('Back-Button wurde nicht gefunden.');
         }
     }
 
