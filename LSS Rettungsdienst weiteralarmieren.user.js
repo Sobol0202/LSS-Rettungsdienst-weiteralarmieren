@@ -1,67 +1,15 @@
 // ==UserScript==
 // @name           LSS Rettungsdienst weiteralarmieren
 // @namespace      https://www.leitstellenspiel.de/
-// @version        1.1
+// @version        1.2
 // @description    Zusätzlicher Button um allen Rettungsdienst direkt als Folgeeinsatz zu alarmieren
 // @author         MissSobol
 // @match          https://www.leitstellenspiel.de/missions/*
 // @grant          none
 // ==/UserScript==
 
-(function() {
-    'use strict';
-
-    // Funktion zum Aktivieren der Checkboxen
-    function activateCheckboxes() {
-        var vehicleTypeIds = ['28', '29', '31', '60', '73', '74', '97', '58', '38'];
-        var checkboxes = document.querySelectorAll('#vehicle_show_table_body_occupied input[type="checkbox"]');
-        for (var i = 0; i < checkboxes.length; i++) {
-            var vehicleTypeId = checkboxes[i].getAttribute('vehicle_type_id');
-            if (vehicleTypeIds.includes(vehicleTypeId)) {
-                checkboxes[i].checked = true;
-                simulateChangeEvent(checkboxes[i]);
-            }
-        }
-//        console.log('Checkboxen wurden aktiviert.');
-    }
-
-    // Funktion zum Simulieren des Änderungsereignisses
-    function simulateChangeEvent(element) {
-        var event = new Event('change', {
-            bubbles: true,
-            cancelable: true
-        });
-        element.dispatchEvent(event);
-    }
-
-    // Funktion zum Hinzufügen des neuen Buttons
-    function addNewButton() {
-        var backButton = document.querySelector('a[href^="/missions/"][href$="/backalarmAll"]');
-        if (backButton) {
-            var newButton = document.createElement('button');
-            newButton.textContent = 'Allen Rettungsdienst weiteralarmieren';
-            newButton.addEventListener('click', function() {
-                var tabContent = document.querySelector('div#vehicle_list_step div.tab-content');
-                if (tabContent) {
-                    var tabLink = tabContent.querySelector('div#occupied');
-                    if (tabLink) {
-                        tabLink.classList.add('active');
-                        setTimeout(activateCheckboxes, 500); // Wartezeit vor dem Aktivieren der Checkboxen
-                    } else {
-//                        console.log('Tab mit der ID "occupied" wurde nicht gefunden.');
-                    }
-                } else {
-//                    console.log('Tab-Inhaltsdiv wurde nicht gefunden.');
-                }
-            });
-
-            backButton.parentNode.insertBefore(newButton, backButton);
-//            console.log('Neuer Button wurde hinzugefügt.');
-        } else {
-//            console.log('Back-Button wurde nicht gefunden.');
-        }
-    }
-
-    // Skript ausführen
-    addNewButton();
-})();
+//Lieber Scriptnutzer,
+//schweren Herzens habe ich heute alle meine Scripte deaktiviert. Der Betreiber hat mir meinen Forenaccount gesperrt, will mir aber weder verraten warum, noch ist man gewillt in Diskurs mit mir zu treten. Da ich ohne einen Forenaccount nicht das Level an Support geben kann, welches ich für mich selber als erforderlich betrachte, habe ich mit sofortiger Wirkung alle meine Scripte deaktiviert.
+//Ich bedanke mich für 5 Jahre Zusammenarbeit im Forum. Danke an alle, die meine Scripte genutzt haben, Daumen dagelassen haben und Kommentare geschrieben haben.
+//Liebe Grüße und noch viel Spaß
+//Sobol
